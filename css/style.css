@@ -1,0 +1,170 @@
+:root {
+  --fundo-principal: #F9FAFB;
+  --branco: #FFFFFF;
+  --primaria: #1E40AF;
+  --secundaria: #60A5FA;
+  --texto-principal: #1F2937;
+  --texto-secundario: #6B7280;
+  --borda-input: #D1D5DB;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--fundo-principal);
+  color: var(--texto-principal);
+  display: flex;
+  flex-direction: column;
+  /* empilha elementos verticalmente */
+  justify-content: flex-start;
+  /* comece do topo */
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: var(--branco);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+  width: 100%;
+  max-width: 500px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--primaria);
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--texto-principal);
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid var(--borda-input);
+  border-radius: 6px;
+  background-color: var(--branco);
+  color: var(--texto-principal);
+}
+
+.radio-group {
+  margin-bottom: 16px;
+}
+
+.radio-group>label:first-child {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--texto-principal);
+}
+
+.radio-option {
+  margin-right: 20px;
+  color: var(--texto-secundario);
+}
+
+button {
+  background-color: var(--primaria);
+  color: var(--branco);
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secundaria);
+}
+
+.link {
+  background-color: var(--primaria);
+  color: var(--branco);
+  /* cor do texto melhor para contraste */
+  width: 100%;
+  max-width: 500px;
+  /* para alinhar com o container */
+  padding: 10px 0;
+  /* padding vertical para centralizar texto */
+  text-align: center;
+  margin-bottom: 20px;
+  /* espaço abaixo da barra */
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  width: 100%;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.voltar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.voltar a {
+  color: #1E40AF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+  /* footer {
+    background-color: var(--texto-principal);
+    color: #faebd7;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  footer a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #linkGit {
+    height: 24px;
+    max-height: 24px;
+    width: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+  } */
+
+
+

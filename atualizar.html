@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Atualizar</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Atualizações</h2>
+        <form action="atualizar.php" method="post">
+            <label>ID do aluno:</label>
+            <input type="number" name="id" placeholder="Digite o ID do aluno">
+
+            <label>Nome:</label>
+            <input name="nome" type="text" placeholder="Digite o nome atualizado">
+
+            <label>Telefone:</label>
+            <input name="tel" type="text" placeholder="Digite o telefone atualizado">
+
+            <label>Congregação:</label>
+            <select name="congregacao">
+                <option value="Sede">Sede</option>
+                <option value="Jacupiranga">Jacupiranga</option>
+                <option value="Pariquera">Pariquera</option>
+                <option value="Iguape">Iguape</option>
+                <option value="Ilha Comprida">Ilha Comprida</option>
+                <option value="Itimirim">Itimirim</option>
+                <option value="Sete Barras">Sete Barras</option>
+                <option value="Cananeia">Cananéia</option>
+                <option value="Angatuba">Angatuba</option>
+                <option value="Serrote">Serrote</option>
+                <option value="Guaviruva">Guaviruva</option>
+            </select>
+
+            <label>Pegou a apostila?</label>
+            <select name="pegou" required>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+            </select>
+
+            <label>Pagou a apostila?</label>
+            <select name="pagou" required>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+            </select>
+
+            <button>Atualizar</button>
+        </form>
+    </div>
+    <div class="voltar">
+        <a href="index.html">← Voltar</a>
+    </div>
+</body>
+
+</html>

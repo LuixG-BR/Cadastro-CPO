@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="js/script.js"></script>
+    <title>Inscrições CPO</title>
+</head>
+
+<body>
+    <div class="link">
+        <a href="lista_alunos.php">Lista de Alunos</a>
+        <a href="atualizar.html">Atualizar Dados</a>
+        <a href="lista_presenca.php">Lista de Presença</a>
+    </div>
+
+    <div class="container">
+        <h2>Inscrições CPO</h2>
+        <form action="dados.php" method="post">
+            <label>Nome:</label>
+            <input name="nome" type="text" placeholder="Digite o nome do aluno">
+            <br>
+            <label>Telefone:</label>
+            <input name="tel" type="text" placeholder="Digite o telefone do aluno">
+            <br>
+            <label>Congregação:</label>
+            <select name="congregacao">
+                <option value="Sede">Sede</option>
+                <option value="Jacupiranga">Jacupiranga</option>
+                <option value="Pariquera">Pariquera</option>
+                <option value="Iguape">Iguape</option>
+                <option value="Ilha Comprida">Ilha Comprida</option>
+                <option value="Itimirim">Itimirim</option>
+                <option value="Sete Barras">Sete Barras</option>
+                <option value="Cananéia">Cananéia</option>
+                <option value="Angatuba">Angatuba</option>
+                <option value="Serrote">Serrote</option>
+                <option value="Guaviruva">Guaviruva</option>
+            </select>
+            <br>
+            <div class="radio-group">
+                <label>Pegou a Apostila:</label>
+                <label class="radio-option">
+                    <input type="radio" name="pegou" value="sim">
+                    Sim
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="pegou" value="não">
+                    Não
+                </label>
+            </div>
+
+            <div class="radio-group">
+                <label>Pagou a Apostila:</label>
+                <label class="radio-option">
+                    <input type="radio" name="pagou" value="sim">
+                    Sim
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="pagou" value="não">
+                    Não
+                </label>
+            </div>
+            <br>
+            <button>Enviar Inscrição</button>
+        </form>
+    </div>
+    <!-- <footer>
+        <a href="https://github.com/LuixG-BR" target="_blank" rel="noopener noreferrer">
+            &copy;LuixG_BR code's
+            <img id="linkGit" src="imgs/img_github.png" alt="GitHub">
+        </a>
+    </footer> -->
+
+    
+
+</body>
+
+</html>
