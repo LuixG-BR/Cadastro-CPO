@@ -9,7 +9,7 @@ $result = mysqli_query($conexao, "SELECT id_aluno FROM aluno");
 
 while ($aluno = mysqli_fetch_assoc($result)) {
     $id_aluno = $aluno["id_aluno"];
-    $presente = isset($presencas[$id_aluno]) ? 1 : 0;
+    $presente = isset($presencas[$id_aluno]) ? 'P' : 'F';
 
     // Evita duplicidade — exclui se já existir presença para essa data
     mysqli_query($conexao, "DELETE FROM presenca WHERE id_aluno = $id_aluno AND data_presenca = '$data'");
