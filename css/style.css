@@ -62,7 +62,7 @@ select {
   color: var(--texto-principal);
 }
 
-.radio-group {
+/* .radio-group {
   margin-bottom: 16px;
 }
 
@@ -76,7 +76,7 @@ select {
 .radio-option {
   margin-right: 20px;
   color: var(--texto-secundario);
-}
+} */
 
 button {
   background-color: var(--primaria);

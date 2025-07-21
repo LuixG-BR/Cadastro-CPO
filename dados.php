@@ -12,19 +12,18 @@
     $nome = $_POST["nome"];
     $telefone = $_POST["tel"] ??null ;
     $congregacao = $_POST["congregacao"];
-    $pegouApostila = $_POST["pegou"];
-    $pagouApostila = $_POST["pagou"];
+    // $pegouApostila = $_POST["pegou"];
+    // $pagouApostila = $_POST["pagou"];
 
-    if(empty($nome)||empty($congregacao)||
-       empty($pegouApostila)||empty($pagouApostila)){
+    if(empty($nome)||empty($congregacao)){
         echo "Campos Vazios !";
         die ("Campos Vazios !");
     }
 
-    $sql = "insert into aluno(nome_aluno, tel_aluno, congregacao_aluno, pegouApostila, pagouApostila)
-     values(?,?,?,?,?)";
+    $sql = "insert into aluno(nome_aluno, tel_aluno, congregacao_aluno)
+     values(?,?,?)";
     $comando = mysqli_prepare($conexao,$sql);
-    mysqli_stmt_bind_param($comando,'sssss',$nome,$telefone,$congregacao,$pegouApostila,$pagouApostila);
+    mysqli_stmt_bind_param($comando,'sss',$nome,$telefone,$congregacao);
 
     if(mysqli_stmt_execute($comando)){
         echo "cadastro com sucesso !!";

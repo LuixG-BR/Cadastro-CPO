@@ -7,8 +7,8 @@ $id = $_POST["id"];
 $nome = $_POST["nome"] ?? null;
 $telefone = $_POST["tel"] ?? null;
 $congregacao = $_POST["congregacao"] ?? null;
-$pegou = $_POST["pegou"] ?? null;
-$pagou = $_POST["pagou"] ?? null;
+// $pegou = $_POST["pegou"] ?? null;
+// $pagou = $_POST["pagou"] ?? null;
 
 // Constrói dinamicamente os campos a serem atualizados
 $campos = [];
@@ -26,14 +26,14 @@ if (!empty($congregacao)) {
     $campos[] = "congregacao_aluno = ?";
     $valores[] = $congregacao;
 }
-if (!empty($pegou)) {
-    $campos[] = "pegouApostila = ?";
-    $valores[] = $pegou;
-}
-if (!empty($pagou)) {
-    $campos[] = "pagouApostila = ?";
-    $valores[] = $pagou;
-}
+// if (!empty($pegou)) {
+//     $campos[] = "pegouApostila = ?";
+//     $valores[] = $pegou;
+// }
+// if (!empty($pagou)) {
+//     $campos[] = "pagouApostila = ?";
+//     $valores[] = $pagou;
+// }
 
 if (empty($campos)) {
     die("Nenhum dado para atualizar.");

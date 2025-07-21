@@ -143,3 +143,12 @@ tr:hover {
     background-color: #EEF2FF;
 }
 
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid var(--borda-input);
+    border-radius: 6px;
+    background-color: var(--branco);
+    color: var(--texto-principal);
+}
