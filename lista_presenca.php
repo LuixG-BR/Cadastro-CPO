@@ -5,6 +5,8 @@ require_once "conexao.php";
 $dataReferencia = date('Y-m-01');
 $segundoSabado = date('Y-m-d', strtotime('second saturday of ' . $dataReferencia));
 
+$data = isset($_POST["data"]) ? $_POST["data"] : $segundoSabado;
+
 // 2. Busca os alunos
 $sql = "SELECT id_aluno, nome_aluno FROM aluno ORDER BY nome_aluno ASC";
 $resultado = mysqli_query($conexao, $sql);
@@ -19,10 +21,16 @@ $resultado = mysqli_query($conexao, $sql);
 </head>
 <body>
 <div class="container">
-<h2>Lista de Presença — <?= date("d/m/Y", strtotime($segundoSabado)) ?></h2>
-<form action="salvar_presenca.php" method="post">
-    <input type="hidden" name="data_presenca" value="<?= $segundoSabado ?>">
 
+<h2>Lista de Presença — <?= date("d/m/Y", strtotime($data)) ?></h2>
+
+<form method="post" style="margin-bottom: 18px;">
+    <input type="date" name="data" value="<?= $data ?>" style="margin-top: 15px;">
+    <button type="submit" style="margin-top: 10px;">Carregar Lista</button>
+</form>
+<hr>
+<form action="salvar_presenca.php" method="post" style="margin-top: 15px;">
+    <input type="hidden" name="data_presenca" value="<?= $data ?>">
     <?php while($aluno = mysqli_fetch_assoc($resultado)): ?>
         <label>
             <input type="checkbox" name="presenca[<?= $aluno['id_aluno'] ?>]" value="P">
