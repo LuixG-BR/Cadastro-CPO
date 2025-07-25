@@ -1,0 +1,105 @@
+:root {
+    --fundo-principal: #F9FAFB;
+    --branco: #FFFFFF;
+    --primaria: #1E40AF;
+    --secundaria: #60A5FA;
+    --texto-principal: #1F2937;
+    --texto-secundario: #6B7280;
+    --borda-input: #D1D5DB;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--fundo-principal);
+    color: var(--texto-principal);
+    display: flex;
+    flex-direction: column;
+    /* empilha elementos verticalmente */
+    justify-content: flex-start;
+    /* comece do topo */
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primaria);
+    text-align: center;
+}
+
+button {
+    background-color: var(--primaria);
+    color: var(--branco);
+    border: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secundaria);
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.voltar a {
+    color: #1E40AF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    background-color: var(--primaria);
+    color: var(--branco);
+    border: 1px solid var(--borda-input);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+    align-items: center;
+}
+
+input[type="date"]:focus {
+    border-color: var(--primaria);
+    box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.09);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--secundaria);
+    color: var(--branco);
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--texto-principal);
+    font-weight: 600;
+}

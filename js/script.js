@@ -9,28 +9,6 @@ function filtrarTabela() {
     });
 }
 
-function exportarPDF(){
-document.getElementById("exportarPDF").addEventListener("click", function () {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    doc.text("Lista de Alunos - CPO", 14, 14);
-    doc.autoTable({
-        html: 'table',
-        startY: 20,
-        styles: {
-            fontSize: 10,
-            cellPadding: 3
-        },
-        headStyles: {
-            fillColor: [30, 64, 175] 
-        }
-    });
-
-    doc.save("alunos.pdf");
-});
-}
-
 async function exportarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();

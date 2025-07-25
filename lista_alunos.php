@@ -10,7 +10,7 @@ $sql = "
         COUNT(CASE WHEN p.presente = 1 THEN 1 END) AS total_presencas,
         GROUP_CONCAT(
             DATE_FORMAT(p.data_presenca, '%d/%m/%Y')
-            ORDER BY p.data_presenca SEPARATOR ', '
+            ORDER BY p.data_presenca SEPARATOR '* '
         ) AS datas_presencas
     FROM aluno a
     LEFT JOIN presenca p ON a.id_aluno = p.id_aluno AND p.presente = 1
@@ -40,9 +40,9 @@ $resultado = mysqli_query($conexao, $sql);
 <div class="selecionar-colunas">
   <label><input type="checkbox" class="coluna" value="0"> ID</label>
   <label><input type="checkbox" class="coluna" value="1"> Nome</label>
-  <label><input type="checkbox" class="coluna" value="2"> Congregação</label>
-  <label><input type="checkbox" class="coluna" value="3"> Presença</label>
-  <label><input type="checkbox" class="coluna" value="4"> Datas Presentes</label>
+  <label><input type="checkbox" class="coluna" value="3"> Congregação</label>
+  <label><input type="checkbox" class="coluna" value="4"> Nº Presença</label>
+  <label><input type="checkbox" class="coluna" value="5"> Datas Presentes</label>
   <input type="text" placeholder="Digite o nome que você deseja salvar no arquivo..." name="nome">
 </div>
 

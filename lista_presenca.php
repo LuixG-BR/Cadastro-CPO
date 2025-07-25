@@ -16,7 +16,7 @@ $resultado = mysqli_query($conexao, $sql);
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/lista_presenca.css" type="text/css">
     <title>Lista de Presença</title>
 </head>
 <body>
@@ -28,6 +28,7 @@ $resultado = mysqli_query($conexao, $sql);
     <input type="date" name="data" value="<?= $data ?>" style="margin-top: 15px;">
     <button type="submit" style="margin-top: 10px;">Carregar Lista</button>
 </form>
+
 <hr>
 <form action="salvar_presenca.php" method="post" style="margin-top: 15px;">
     <input type="hidden" name="data_presenca" value="<?= $data ?>">
