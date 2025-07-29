@@ -1,0 +1,3 @@
+Atualizações:
+
+Na tela autualizar, ao adicionar o ID do aluno, trazer todas as informações daquele ID e o usuário ir mudando conforme a necessidade.
