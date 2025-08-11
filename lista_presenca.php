@@ -8,7 +8,7 @@ $segundoSabado = date('Y-m-d', strtotime('second saturday of ' . $dataReferencia
 $data = isset($_POST["data"]) ? $_POST["data"] : $segundoSabado;
 
 // 2. Busca os alunos
-$sql = "SELECT id_aluno, nome_aluno FROM aluno ORDER BY nome_aluno ASC";
+$sql = "SELECT id_aluno, nome_aluno FROM aluno ORDER BY congregacao_aluno ASC";
 $resultado = mysqli_query($conexao, $sql);
 ?>
 

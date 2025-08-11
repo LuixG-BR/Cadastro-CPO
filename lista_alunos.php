@@ -1,6 +1,23 @@
 <?php
 require_once "conexao.php";
 
+// $sql = "
+//     SELECT 
+//         a.id_aluno,
+//         a.nome_aluno,
+//         a.tel_aluno,
+//         a.congregacao_aluno,
+//         COUNT(CASE WHEN p.presente = 1 THEN 1 END) AS total_presencas,
+//         GROUP_CONCAT(
+//             DATE_FORMAT(p.data_presenca, '%d/%m/%Y')
+//             ORDER BY p.data_presenca SEPARATOR ' - '
+//         ) AS datas_presencas
+//     FROM aluno a
+//     LEFT JOIN presenca p ON a.id_aluno = p.id_aluno AND p.presente = 1
+//     GROUP BY a.id_aluno, a.nome_aluno, a.tel_aluno, a.congregacao_aluno
+//     ORDER BY a.congregacao_aluno ASC
+// ";
+
 $sql = "
     SELECT 
         a.id_aluno,
@@ -8,16 +25,14 @@ $sql = "
         a.tel_aluno,
         a.congregacao_aluno,
         COUNT(CASE WHEN p.presente = 1 THEN 1 END) AS total_presencas,
-        GROUP_CONCAT(
-            DATE_FORMAT(p.data_presenca, '%d/%m/%Y')
-            ORDER BY p.data_presenca SEPARATOR '* '
-        ) AS datas_presencas
+        DATE_FORMAT(MAX(p.data_presenca), '%d/%m/%Y') AS ultima_presenca
     FROM aluno a
-    LEFT JOIN presenca p ON a.id_aluno = p.id_aluno AND p.presente = 1
+    LEFT JOIN presenca p 
+        ON a.id_aluno = p.id_aluno 
+        AND p.presente = 1
     GROUP BY a.id_aluno, a.nome_aluno, a.tel_aluno, a.congregacao_aluno
-    ORDER BY a.nome_aluno ASC
+    ORDER BY a.congregacao_aluno ASC
 ";
-
 
 $resultado = mysqli_query($conexao, $sql);
 ?>
@@ -38,9 +53,9 @@ $resultado = mysqli_query($conexao, $sql);
 <h2>Lista de Todos os Alunos Cadastrados</h2>
 <input type="text" id="filtro" placeholder="Filtrar por nome, telefone ou congregação..." onkeyup="filtrarTabela()" />
 <div class="selecionar-colunas">
-  <label><input type="checkbox" class="coluna" value="0"> ID</label>
-  <label><input type="checkbox" class="coluna" value="1"> Nome</label>
-  <label><input type="checkbox" class="coluna" value="3"> Congregação</label>
+  <label><input type="checkbox" class="coluna" value="0" checked> ID</label>
+  <label><input type="checkbox" class="coluna" value="1" checked> Nome</label>
+  <label><input type="checkbox" class="coluna" value="3" checked> Congregação</label>
   <label><input type="checkbox" class="coluna" value="4"> Nº Presença</label>
   <label><input type="checkbox" class="coluna" value="5"> Datas Presentes</label>
   <input type="text" placeholder="Digite o nome que você deseja salvar no arquivo..." name="nome">
@@ -70,7 +85,7 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= htmlspecialchars($aluno["tel_aluno"]) ?></td>
             <td><?= htmlspecialchars($aluno["congregacao_aluno"]) ?></td>
             <td><?= $aluno["total_presencas"] ?></td>
-             <td><?= $aluno["datas_presencas"] ?: '-' ?></td>
+           <a href="datas"><td><?= $aluno["ultima_presenca"] ?: '-' ?></td></a> 
         </tr>
     <?php endwhile; ?>
 </tbody>
