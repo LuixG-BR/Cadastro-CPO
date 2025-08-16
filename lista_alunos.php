@@ -85,7 +85,9 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= htmlspecialchars($aluno["tel_aluno"]) ?></td>
             <td><?= htmlspecialchars($aluno["congregacao_aluno"]) ?></td>
             <td><?= $aluno["total_presencas"] ?></td>
-           <a href="datas"><td><?= $aluno["ultima_presenca"] ?: '-' ?></td></a> 
+            <td><?= $aluno["ultima_presenca"] ?: '-' ?>
+            <br>
+            <a href="historico_presenca.php?id=<?= $aluno['id_aluno'] ?>">Ver histórico</a></td>
         </tr>
     <?php endwhile; ?>
 </tbody>
