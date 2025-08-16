@@ -36,6 +36,8 @@
                 <option value="Guaviruva">Guaviruva</option>
             </select>
 
+            <button>Atualizar</button>
+
             <!-- <label>Pegou a apostila?</label>
             <select name="pegou" required>
                 <option value="sim">Sim</option>
@@ -47,8 +49,17 @@
                 <option value="sim">Sim</option>
                 <option value="não">Não</option>
             </select> -->
+        </form>
 
-            <button>Atualizar</button>
+        <h2 style="margin-top: 65px; color: #ff0000;">Deletar Registro</h2>
+        <form action="deletar.php" method="post" onsubmit="return confirmarDelete()">
+            <label>ID do aluno:</label>
+            <input type="number" name="id" placeholder="Digite o ID do aluno" required>
+
+            <label>Senha:</label>
+            <input type="password" name="senha" placeholder="Digite a senha" >
+
+            <button style="margin-top: 15px;">Deletar</button>
         </form>
     </div>
     <div class="voltar">
@@ -57,3 +68,5 @@
 </body>
 
 </html>
+
+<!--  -->
