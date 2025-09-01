@@ -8,9 +8,6 @@ $senha_correta = "180509";
 
 $sqlAluno = "DELETE FROM aluno WHERE id_aluno = $id";
 $sqlPresenca = "DELETE FROM presenca WHERE id_aluno = $id";
-    
-mysqli_query($conexao, $sqlPresenca);
-mysqli_query($conexao, $sqlAluno);
 
 $mensagem = "";
 $tipo = "";
@@ -19,10 +16,8 @@ if ($id <= 0) {
     $mensagem = "ID inválido!";
     $tipo = "erro";
 } elseif ($senha === $senha_correta) {
-    $sqlPresenca = "DELETE FROM presenca WHERE id_aluno = $id";
-    mysqli_query($conexao, $sqlPresenca);
 
-    $sqlAluno = "DELETE FROM aluno WHERE id_aluno = $id";
+    mysqli_query($conexao, $sqlPresenca);
     mysqli_query($conexao, $sqlAluno);
 
     $mensagem = "Registro deletado com sucesso!";
@@ -91,7 +86,7 @@ mysqli_close($conexao);
 <div class="mensagem <?= $tipo ?>">
     <?= htmlspecialchars($mensagem) ?>
     <br>
-    <a href="deletar_form.php">← Voltar</a>
+    <a href="index.html">← Voltar</a>
 </div>
 
 </body>
