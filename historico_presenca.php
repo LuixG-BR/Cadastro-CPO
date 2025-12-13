@@ -21,47 +21,131 @@ $sql = "
     WHERE id_aluno = $id_aluno
     ORDER BY data_presenca DESC
 ";
-
 $resultado = mysqli_query($conexao, $sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/lista_alunos.css" type="text/css">
+    <link rel="stylesheet" href="css/certificado.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <title>Histórico de Presença</title>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Histórico de Presença</h2>
-    <p><strong>Aluno:</strong> <?= htmlspecialchars($aluno["nome_aluno"]) ?></p>
-    <p><strong>Congregação:</strong> <?= htmlspecialchars($aluno["congregacao_aluno"]) ?></p>
+    <!-- ===================== HISTÓRICO ===================== -->
+    <div class="historico-container">
+        <div class="container">
 
-    <div class="tabela">
-        <table>
-            <thead>
-                <tr>
-                    <th>Data da Aula</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php while($linha = mysqli_fetch_assoc($resultado)): ?>
-                <tr>
-                    <td><?= date('d/m/Y', strtotime($linha["data_presenca"])) ?></td>
-                    <td><?= $linha["status"] ?></td>
-                </tr>
-            <?php endwhile; ?>
-            </tbody>
-        </table>
+            <h2>Histórico de Presença</h2>
+
+            <p><strong>Aluno(a):</strong> <?= htmlspecialchars($aluno["nome_aluno"]) ?></p>
+            <p><strong>Congregação:</strong> <?= htmlspecialchars($aluno["congregacao_aluno"]) ?></p>
+
+            <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data da Aula</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($linha = mysqli_fetch_assoc($resultado)): ?>
+                            <tr>
+                                <td><?= date('d/m/Y', strtotime($linha["data_presenca"])) ?></td>
+                                <td><?= $linha["status"] ?></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="btn">
+        <input type="hidden" id="aluno_id" value="<?= $id_aluno ?>">
+        <input type="hidden" id="aluno_nome" value="<?= htmlspecialchars($aluno['nome_aluno'], ENT_QUOTES, 'UTF-8') ?>">
 
-<div class="voltar">
-    <a href="lista_alunos.php">← Voltar para lista de alunos</a>
-</div>
+        <button id="btnExportar">
+            Exportar Certificado em PDF
+        </button>
+    </div>
+
+    <!-- ===================== CERTIFICADO ===================== -->
+    <div class="a4" id="certificado-container">
+        <div class="certificado" id="certificado">
+            <div class="logo"></div>
+            <div class="marca-dagua"></div>
+            <!-- Triângulos -->
+            <div class="decoracao canto-esq-superior"></div>
+            <div class="decoracao canto-esq-superior2"></div>
+            <div class="decoracao canto-esq-superior3"></div>
+            <div class="decoracao canto-dir-inferior"></div>
+            <div class="decoracao canto-dir-inferior2"></div>
+            <div class="decoracao canto-dir-inferior3"></div>
+
+            <div class="certificado-borda">
+                <div class="conteudo">
+                    <h1 class="titulo">CERTIFICADO</h1>
+
+                    <p class="texto-intro">Este certificado comprova que</p>
+
+                    <h2 class="nome"><?= htmlspecialchars($aluno["nome_aluno"]) ?></h2>
+
+                    <p class="texto-principal">
+                        Concluiu com êxito o <strong>Curso Preparatório de Obreiros</strong>,
+                        demonstrando dedicação, esforço e compromisso exemplares.
+                        Que esta conquista seja o início de uma trajetória de sucesso e sabedoria.
+                    </p>
+
+
+                    <div class="assinaturas">
+                        <div class="assinatura">
+                            <hr>
+                            <span>Pr. Ismael</span>
+                        </div>
+                        <div class="assinatura">
+                            <hr>
+                            <span>Professor Pr. Jorge</span>
+                        </div>
+                    </div>
+
+                    <p class="texto-final">Emitido em <?= date('d/m/Y') ?>.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================== VOLTAR ===================== -->
+    <div class="voltar">
+        <a href="lista_alunos.php">← Voltar para lista de alunos</a>
+    </div>
 
 </body>
+<script>
+    document.getElementById("btnExportar").addEventListener("click", function() {
+        const id = document.getElementById("aluno_id").value;
+        const nome = document.getElementById("aluno_nome").value;
+
+        exportarCertificado(id, nome);
+        console.log(
+            document.getElementById("aluno_id").value,
+            document.getElementById("aluno_nome").value
+        );
+    });
+</script>
+
+
 </html>

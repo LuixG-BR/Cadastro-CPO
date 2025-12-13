@@ -1,0 +1,300 @@
+/* ------------------------- */
+/* CORES                     */
+/* ------------------------- */
+:root {
+  --primaria: #0b2c61;
+  --dourado: #c1a043;
+
+  --teste: #a9a9a9;
+}
+
+/* ------------------------- */
+/* A4 EM PAISAGEM (SOMENTE A FOLHA EM MM) */
+/* ------------------------- */
+.a4 {
+  width: 297mm;
+  height: 210mm;
+  background: white;
+  margin: 20px auto;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: visible;
+}
+
+/* ------------------------- */
+/* CERTIFICADO INTERNO       */
+/* ------------------------- */
+.certificado {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* BORDA DUPLA              */
+.certificado-borda {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 40px;
+  bottom: 40px;
+
+  border: 10px solid var(--primaria);
+  padding: 150px 20px;
+
+  z-index: 5;
+  /* abaixo dos triângulos */
+}
+
+.logo {
+  position: absolute;
+  scale: 0.3;
+  top: -290px;
+  left: 420px;
+  width: 100%;
+  height: 100%;
+  background-image: url('../imgs/img_logo2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%;
+  pointer-events: none; /* não atrapalha cliques */
+}
+
+.marca-dagua {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 100%;
+  height: 100%;
+  background-image: url('../imgs/img_logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%;
+  opacity: 0.2;
+  pointer-events: none; /* não atrapalha cliques */
+}
+
+
+/* ------------------------- */
+/* TRIÂNGULOS DECORATIVOS    */
+/* ------------------------- */
+.decoracao {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 10;
+  /* acima da borda */
+}
+
+/* ---- Superior esquerdo */
+.canto-esq-superior {
+  top: 0;
+  left: 0;
+  border-top: 220px solid var(--primaria);
+  border-right: 220px solid transparent;
+}
+
+.canto-esq-superior2 {
+  top: 0;
+  left: 0;
+  border-top: 210px solid #FFF;
+  border-right: 210px solid transparent;
+}
+
+.canto-esq-superior3 {
+  top: 0;
+  left: 0;
+  border-top: 180px solid var(--primaria);
+  border-right: 180px solid transparent;
+}
+
+/* LINHA 1 (LEVE OFFSET DA PRIMEIRA) */
+.canto-esq-superior3::before {
+  content: "";
+  position: absolute;
+  top: -235px;
+  left: 0;
+  width: 4px;
+  height: 320px;
+
+  /* background: var(--dourado); */
+  background: linear-gradient(45deg,
+      transparent 0%,
+      var(--dourado) 30%,
+      transparent 57%,
+      transparent 100%);
+
+  transform: rotate(-135deg);
+  transform-origin: center;
+}
+
+/* LINHA 2 (LEVE OFFSET DA PRIMEIRA) */
+.canto-esq-superior3::after {
+  content: "";
+  position: absolute;
+  top: -240px;
+  left: 12px;
+  /* ajusta espaçamento */
+  width: 4px;
+  height: 350px;
+
+  /* background: var(--dourado); */
+  background: linear-gradient(45deg,
+      transparent 0%,
+      var(--dourado) 30%,
+      transparent 57%,
+      transparent 100%);
+  /*Não Aparece*/
+
+  transform: rotate(-135deg);
+  transform-origin: center;
+}
+
+/* ---- Inferior direito */
+.canto-dir-inferior {
+  bottom: 0;
+  right: 0;
+  border-bottom: 220px solid var(--primaria);
+  border-left: 220px solid transparent;
+}
+
+.canto-dir-inferior2 {
+  bottom: 0;
+  right: 0;
+  border-bottom: 210px solid #FFF;
+  border-left: 210px solid transparent;
+}
+
+.canto-dir-inferior3 {
+  bottom: 0;
+  right: 0;
+  border-bottom: 180px solid var(--primaria);
+  border-left: 180px solid transparent;
+}
+
+/* LINHA 2 (LEVE OFFSET DA PRIMEIRA) */
+.canto-dir-inferior3::before {
+  content: "";
+  position: absolute;
+  bottom: -235px;
+  right: 0;
+  width: 4px;
+  height: 320px;
+
+  background: linear-gradient(45deg,
+      transparent 0%,
+      var(--dourado) 30%,
+      transparent 57%,
+      transparent 100%);
+
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* LINHA 1 (LEVE OFFSET DA PRIMEIRA) */
+.canto-dir-inferior3::after {
+  content: "";
+  position: absolute;
+  bottom: -240px;
+  right: 12px;
+  /* ajusta espaçamento */
+  width: 4px;
+  height: 350px;
+
+  background: linear-gradient(45deg,
+      transparent 0%,
+      var(--dourado) 30%,
+      transparent 57%,
+      transparent 100%);
+
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* CONTEÚDO INTERNO          */
+.conteudo {
+  position: relative;
+  text-align: center;
+  z-index: 20;
+  /* acima de tudo */
+}
+
+.titulo {
+  font-size: 40px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.texto-intro {
+  font-size: 16px;
+}
+
+.nome {
+  font-family: "Great Vibes", cursive;
+  font-size: 60px;
+  color: #000;
+  margin: 10px 0;
+}
+
+.texto-principal {
+  max-width: 600px;
+  margin: 10px auto;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.texto-final {
+  margin-top: 75px;
+  font-size: 15px;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* ASSINATURAS               */
+.assinaturas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 140px;
+}
+
+.assinatura {
+  width: 32%;
+  text-align: center;
+}
+
+.assinatura hr {
+  border-top: 1.5px solid #000;
+  margin-bottom: 6px;
+}
+
+/* BOTÃO EXPORTAR            */
+.btn {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btn button {
+  background: var(--primaria);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.acoes button:hover {
+  background: #09305c;
+}
+
+.voltar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.voltar a {
+  color: var(--primaria);
+  font-weight: bold;
+  text-decoration: none;
+}
