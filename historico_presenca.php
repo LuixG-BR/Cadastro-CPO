@@ -98,10 +98,12 @@ $resultado = mysqli_query($conexao, $sql);
 
                     <p class="texto-intro">Este certificado comprova que</p>
 
-                    <h2 class="nome"><?= htmlspecialchars($aluno["nome_aluno"]) ?></h2>
+                    <div class="aluno">
+                        <h2 class="nome"><?= htmlspecialchars($aluno["nome_aluno"]) ?></h2> 
+                    </div>
 
                     <p class="texto-principal">
-                        Concluiu com êxito o <strong>Curso Preparatório de Obreiros</strong>,
+                        Concluiu com êxito o <strong>Curso Preparatório para Obreiros</strong>, com duração de 20 horas,
                         demonstrando dedicação, esforço e compromisso exemplares.
                         Que esta conquista seja o início de uma trajetória de sucesso e sabedoria.
                     </p>
@@ -109,16 +111,29 @@ $resultado = mysqli_query($conexao, $sql);
 
                     <div class="assinaturas">
                         <div class="assinatura">
+                            <img src="./imgs/assinatura-pr_ismael2.png" alt="Assinatura" class="img-assinatura" style="margin-top: 65px;   opacity: 0.52;">
                             <hr>
-                            <span>Pr. Ismael</span>
+                            <span>Pr. Presidente Ismael de Souza Alves</span>
+                            <br>
+                            <span>Direção Geral</span>
                         </div>
                         <div class="assinatura">
+                            <img src="./imgs/assinatura-pr_jorge.png" alt="Assinatura" class="img-assinatura" style="margin-top: 48px;">
                             <hr>
-                            <span>Professor Pr. Jorge</span>
+                            <span>Pr. Jorge Rodrigues Cordeiro</span>
+                            <br>
+                            <span>Coordenação</span>
+                        </div>
+                        <div class="assinatura">
+                            <img src="./imgs/assinatura-pr_renan.png" alt="Assinatura" class="img-assinatura" style="margin-top: 13px;">
+                            <hr>
+                            <span>Pr. Renan Welligton da Silva</span>
+                            <br>
+                            <span>Coordenação</span>
                         </div>
                     </div>
 
-                    <p class="texto-final">Emitido em <?= date('d/m/Y') ?>.</p>
+                    <p class="texto-final">Regsitro SP - 10 de Janeiro de 2026</p>
 
                 </div>
             </div>

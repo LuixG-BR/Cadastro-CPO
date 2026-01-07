@@ -57,7 +57,8 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70%;
-  pointer-events: none; /* não atrapalha cliques */
+  pointer-events: none;
+  /* não atrapalha cliques */
 }
 
 .marca-dagua {
@@ -71,7 +72,8 @@
   background-position: center center;
   background-size: 70%;
   opacity: 0.2;
-  pointer-events: none; /* não atrapalha cliques */
+  pointer-events: none;
+  /* não atrapalha cliques */
 }
 
 
@@ -220,10 +222,11 @@
 }
 
 .titulo {
-  font-size: 40px;
+  font-size: 50px;
   color: #000;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-top: -30px;
 }
 
 .texto-intro {
@@ -234,31 +237,31 @@
   font-family: "Great Vibes", cursive;
   font-size: 60px;
   color: #000;
-  margin: 10px 0;
 }
+
 
 .texto-principal {
   max-width: 600px;
   margin: 10px auto;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
 .texto-final {
-  margin-top: 75px;
+  margin-top: 58px;
   font-size: 15px;
-  color: rgba(117, 117, 117, 0.5);
+  color: #000;
 }
 
 /* ASSINATURAS               */
 .assinaturas {
   display: flex;
   justify-content: space-between;
-  margin-top: 140px;
+  margin-top: 10px;
 }
 
 .assinatura {
-  width: 32%;
+  width: 30%;
   text-align: center;
 }
 
@@ -266,6 +269,20 @@
   border-top: 1.5px solid #000;
   margin-bottom: 6px;
 }
+
+.img-assinatura {
+  width: 140px;
+  /* tamanho ideal */
+  height: auto;
+  display: block;
+  margin: 0 auto -14px auto;
+  transform: rotate(-2deg);
+
+  pointer-events: none;
+  /* evita interação */
+  user-select: none;
+}
+
 
 /* BOTÃO EXPORTAR            */
 .btn {
