@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>Atualizações</h2>
-        <form action="atualizar.php" method="post">
+        <form action="./php/atualizar.php" method="post">
             <label>ID do aluno:</label>
             <input type="number" name="id" placeholder="Digite o ID do aluno">
 
@@ -38,22 +38,10 @@
             </select>
 
             <button>Atualizar</button>
-
-            <!-- <label>Pegou a apostila?</label>
-            <select name="pegou" required>
-                <option value="sim">Sim</option>
-                <option value="não">Não</option>
-            </select>
-
-            <label>Pagou a apostila?</label>
-            <select name="pagou" required>
-                <option value="sim">Sim</option>
-                <option value="não">Não</option>
-            </select> -->
         </form>
 
         <h2 style="margin-top: 65px; color: #ff0000;">Deletar Registro</h2>
-        <form action="deletar.php" method="post" onsubmit="return confirmarDelete()">
+        <form action="./php/deletar.php" method="post" onsubmit="return confirmarDelete()">
             <label>ID do aluno:</label>
             <input type="number" name="id" placeholder="Digite o ID do aluno" required>
 
@@ -64,10 +52,8 @@
         </form>
     </div>
     <div class="voltar">
-        <a href="index.html">← Voltar</a>
+        <a href="./index.html">← Voltar</a>
     </div>
 </body>
 
 </html>
-
-<!--  -->

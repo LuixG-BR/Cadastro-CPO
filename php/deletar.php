@@ -34,7 +34,7 @@ mysqli_close($conexao);
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/lista_alunos.css" type="text/css">
+<link rel="stylesheet" href="../css/lista_alunos.css" type="text/css">
 <title>Deletar Registro</title>
 <style>
     .mensagem {
@@ -86,7 +86,7 @@ mysqli_close($conexao);
 <div class="mensagem <?= $tipo ?>">
     <?= htmlspecialchars($mensagem) ?>
     <br>
-    <a href="index.html">← Voltar</a>
+    <a href="../index.html">← Voltar</a>
 </div>
 
 </body>

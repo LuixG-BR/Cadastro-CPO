@@ -11,14 +11,14 @@
 
 <body>
     <div class="link">
-        <a href="lista_alunos.php">Lista de Alunos</a>
+        <a href="./php/lista_alunos.php">Lista de Alunos</a>
         <a href="atualizar.html">Atualizar Dados</a>
-        <a href="lista_presenca.php">Lista de Presença</a>
+        <a href="./php/lista_presenca.php">Lista de Presença</a>
     </div>
 
     <div class="container">
         <h2>Inscrições CPO</h2>
-        <form action="dados.php" method="post">
+        <form action="./php/cadastrar.php" method="post">
             <label>Nome:</label>
             <input name="nome" type="text" placeholder="Digite o nome do aluno">
             <br>
@@ -40,30 +40,6 @@
                 <option value="Guaviruva">Guaviruva</option>
                 <option value="Barra do Ribeirão">Barra do Ribeirão</option>
             </select>
-            <br>
-            <!-- <div class="radio-group">
-                <label>Pegou a Apostila:</label>
-                <label class="radio-option">
-                    <input type="radio" name="pegou" value="sim">
-                    Sim
-                </label>
-                <label class="radio-option">
-                    <input type="radio" name="pegou" value="não">
-                    Não
-                </label>
-            </div>
-
-            <div class="radio-group">
-                <label>Pagou a Apostila:</label>
-                <label class="radio-option">
-                    <input type="radio" name="pagou" value="sim">
-                    Sim
-                </label>
-                <label class="radio-option">
-                    <input type="radio" name="pagou" value="não">
-                    Não
-                </label>
-            </div> -->
             <br>
             <button>Enviar Inscrição</button>
         </form>

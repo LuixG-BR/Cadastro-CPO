@@ -1,23 +1,6 @@
 <?php
 require_once "conexao.php";
 
-// $sql = "
-//     SELECT 
-//         a.id_aluno,
-//         a.nome_aluno,
-//         a.tel_aluno,
-//         a.congregacao_aluno,
-//         COUNT(CASE WHEN p.presente = 1 THEN 1 END) AS total_presencas,
-//         GROUP_CONCAT(
-//             DATE_FORMAT(p.data_presenca, '%d/%m/%Y')
-//             ORDER BY p.data_presenca SEPARATOR ' - '
-//         ) AS datas_presencas
-//     FROM aluno a
-//     LEFT JOIN presenca p ON a.id_aluno = p.id_aluno AND p.presente = 1
-//     GROUP BY a.id_aluno, a.nome_aluno, a.tel_aluno, a.congregacao_aluno
-//     ORDER BY a.congregacao_aluno ASC
-// ";
-
 $sql = "
     SELECT 
         a.id_aluno,
@@ -41,8 +24,8 @@ $resultado = mysqli_query($conexao, $sql);
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/lista_alunos.css" type="text/css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="../css/lista_alunos.css" type="text/css">
+    <script src="../js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     <title>Lista de Alunos</title>
@@ -96,7 +79,7 @@ $resultado = mysqli_query($conexao, $sql);
 </div>
 
 <div class="voltar">
-    <a href="index.html">← Voltar</a>
+    <a href="../index.html">← Voltar</a>
 </div>
 
 </body>

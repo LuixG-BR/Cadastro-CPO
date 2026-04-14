@@ -29,19 +29,18 @@ $resultado = mysqli_query($conexao, $sql);
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/lista_alunos.css" type="text/css">
-    <link rel="stylesheet" href="css/certificado.css" type="text/css">
+    <link rel="stylesheet" href="../css/lista_alunos.css" type="text/css">
+    <link rel="stylesheet" href="../css/certificado.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <title>Histórico de Presença</title>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
 
-    <!-- ===================== HISTÓRICO ===================== -->
     <div class="historico-container">
         <div class="container">
 
@@ -84,6 +83,7 @@ $resultado = mysqli_query($conexao, $sql);
         <div class="certificado" id="certificado">
             <div class="logo"></div>
             <div class="marca-dagua"></div>
+
             <!-- Triângulos -->
             <div class="decoracao canto-esq-superior"></div>
             <div class="decoracao canto-esq-superior2"></div>
@@ -111,21 +111,21 @@ $resultado = mysqli_query($conexao, $sql);
 
                     <div class="assinaturas">
                         <div class="assinatura">
-                            <img src="./imgs/assinatura-pr_ismael2.png" alt="Assinatura" class="img-assinatura" style="margin-top: 65px;   opacity: 0.52;">
+                            <img src="../imgs/assinatura-pr_ismael2.png" alt="Assinatura" class="img-assinatura" style="margin-top: 65px;   opacity: 0.52;">
                             <hr>
                             <span>Pr. Presidente Ismael de Souza Alves</span>
                             <br>
                             <span>Direção Geral</span>
                         </div>
                         <div class="assinatura">
-                            <img src="./imgs/assinatura-pr_jorge.png" alt="Assinatura" class="img-assinatura" style="margin-top: 48px;">
+                            <img src="../imgs/assinatura-pr_jorge.png" alt="Assinatura" class="img-assinatura" style="margin-top: 48px;">
                             <hr>
                             <span>Pr. Jorge Rodrigues Cordeiro</span>
                             <br>
                             <span>Coordenação</span>
                         </div>
                         <div class="assinatura">
-                            <img src="./imgs/assinatura-pr_renan.png" alt="Assinatura" class="img-assinatura" style="margin-top: 13px;">
+                            <img src="../imgs/assinatura-pr_renan.png" alt="Assinatura" class="img-assinatura" style="margin-top: 13px;">
                             <hr>
                             <span>Pr. Renan Welligton da Silva</span>
                             <br>
@@ -143,7 +143,6 @@ $resultado = mysqli_query($conexao, $sql);
     </div>
 
 
-    <!-- ===================== VOLTAR ===================== -->
     <div class="voltar">
         <a href="lista_alunos.php">← Voltar para lista de alunos</a>
     </div>

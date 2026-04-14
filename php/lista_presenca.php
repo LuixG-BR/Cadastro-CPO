@@ -1,13 +1,13 @@
 <?php
 require_once "conexao.php";
 
-// 1. Define o segundo sábado do mês atual
+// Define o segundo sábado do mês atual(Data Padrão da aula)
+
 $dataReferencia = date('Y-m-01');
 $segundoSabado = date('Y-m-d', strtotime('second saturday of ' . $dataReferencia));
 
 $data = isset($_POST["data"]) ? $_POST["data"] : $segundoSabado;
 
-// 2. Busca os alunos
 $sql = "SELECT id_aluno, nome_aluno FROM aluno ORDER BY congregacao_aluno ASC";
 $resultado = mysqli_query($conexao, $sql);
 ?>
@@ -16,7 +16,7 @@ $resultado = mysqli_query($conexao, $sql);
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/lista_presenca.css" type="text/css">
+    <link rel="stylesheet" href="../css/lista_presenca.css" type="text/css">
     <title>Lista de Presença</title>
 </head>
 <body>

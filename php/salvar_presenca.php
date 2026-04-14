@@ -4,7 +4,6 @@ require_once "conexao.php";
 $data = $_POST["data_presenca"];
 $presencas = $_POST["presenca"] ?? [];
 
-// Buscar todos os alunos
 $result = mysqli_query($conexao, "SELECT id_aluno FROM aluno");
 
 while ($aluno = mysqli_fetch_assoc($result)) {

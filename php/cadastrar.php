@@ -12,8 +12,6 @@
     $nome = $_POST["nome"];
     $telefone = $_POST["tel"] ??null ;
     $congregacao = $_POST["congregacao"];
-    // $pegouApostila = $_POST["pegou"];
-    // $pagouApostila = $_POST["pagou"];
 
     if(empty($nome)||empty($congregacao)){
         echo "Campos Vazios !";
