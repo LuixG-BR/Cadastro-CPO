@@ -16,8 +16,11 @@ $sql = "
     GROUP BY a.id_aluno, a.nome_aluno, a.tel_aluno, a.congregacao_aluno
     ORDER BY a.congregacao_aluno ASC
 ";
+$resultado = mysqli_query($conexao ,$sql);
 
-$resultado = mysqli_query($conexao, $sql);
+$sqlCount = "SELECT COUNT(nome_aluno) as NumeroDeAlunosCadastrados from aluno";
+$resultadoCount = mysqli_query($conexao, $sqlCount);
+$count = mysqli_fetch_assoc($resultadoCount);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +36,7 @@ $resultado = mysqli_query($conexao, $sql);
 <body>
 
 <div class="container">
-<h2>Lista de Todos os Alunos Cadastrados</h2>
+<h2>Formulario de Relatorio</h2>
 <input type="text" id="filtro" placeholder="Filtrar por nome, telefone ou congregação..." onkeyup="filtrarTabela()" />
 <div class="selecionar-colunas">
   <label><input type="checkbox" class="coluna" value="0" checked> ID</label>
@@ -41,6 +44,7 @@ $resultado = mysqli_query($conexao, $sql);
   <label><input type="checkbox" class="coluna" value="3" checked> Congregação</label>
   <label><input type="checkbox" class="coluna" value="4"> Nº Presença</label>
   <label><input type="checkbox" class="coluna" value="5"> Datas Presentes</label>
+  <label>Número de alunos Cadastrados: <?= $count["NumeroDeAlunosCadastrados"] ?></label>
   <input type="text" placeholder="Digite o nome que você deseja salvar no arquivo..." name="nome">
 </div>
 
@@ -48,6 +52,7 @@ $resultado = mysqli_query($conexao, $sql);
     <button id="exportarPDF"  onclick="exportarPDF()">Exportar para PDF</button>
 </div>
 
+<h2>Lista Alunos</h2>
 <div class="tabela">
 <table>
     <thead>
